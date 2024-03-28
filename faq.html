@@ -6,10 +6,67 @@
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 		<link href="assets/styles.css" rel="stylesheet">
 		<style>
-			/* Schrijf hier gewoon je CSS voor dit component */
 
-			/* Hint: Dit component kun je volledig met HTML en CSS bouwen */
+			ul {
+				display: block;
+				list-style-type: none;
+				margin-block-start: 0em;
+				margin-block-end: 0em;
+				margin-inline-start: 0px;
+				margin-inline-end: 0px;
+				padding-inline-start: 0px;
+				unicode-bidi: isolate;
+			}
 
+			li {
+				padding: .5em;
+			}
+
+			li details {
+				border: .1em solid black ;
+				border-radius: .5em;
+				padding: 1em;
+				width:fit-content;
+			}
+
+			li details[open] {
+				border: none;
+				background-color: var(--green);
+			}
+
+			li:nth-child(1n) details[open] {
+				background-color: var(--green);
+			}
+
+			li:nth-child(2n +1) details[open] {
+				background-color: var(--purple);
+			}
+
+			li:nth-child(3n +1) details[open] {
+				background-color: var(--yellow);
+			}
+
+			summary {
+				cursor: pointer;
+			}
+			
+			summary,
+			p {
+				font-weight: 500;
+			}
+
+			summary::marker {
+				content: none;
+			}
+
+			summary::before,
+			summary::after {
+				content: '';
+			}
+
+
+			/* Schrijf hier gewoon je CSS voor dit component *
+			/* Hint: Dit component kun je volledig met HTML en CSS bouwen *
 			/* Hint: Denk aan de states van het component; deze kan open en dicht zijn */
 		</style>
 	</head>
@@ -52,23 +109,8 @@
 					</p>
 				</details>
 			</li>
-
-
-
 		</ul>
 
-
-		<!-- Content (waar nog wat HTML omheen moet 😄):
-		Wat is frontend development?
-		Een frontend developer ontwerpt en bouwt websites in HTML, CSS en JavaScript. Deze frontend talen leer je bij ons, je hebt dus geen voorkennis nodig.
-
-		Moet ik al kunnen coderen?
-		Nee, je hebt helemaal geen voorkennis nodig om te beginnen aan deze opleiding, we kunnen je alles leren! Als je wel al voorkennis hebt, is dat alleen maar goed, dan kunnen we je helpen je skills te verbeteren en te verdiepen in de stof.
-
-		Wat is een Associate Degree?
-		Een Associate degree-opleiding is een tweejarige hbo-opleiding op niveau 5. Een Ad slaat een brug tussen het mbo-4 (niveau 4) en een hbo-bachelor (niveau 6). Met een Associate degree kies je voor een praktijkgerichte hbo-opleiding; je wordt opgeleid voor een beroep dat aansluit bij de praktijk. In dit geval word je opgeleid tot ‘frontend designer/developer' of kortweg ‘frontender’. Frontenders ontwerpen en maken interactieve, toegankelijke toepassingen voor het web. Frontenders werken binnen het gebied van software development, interactieontwerp en digitaal visueel ontwerp.
-		Na afronding van deze tweejarige hbo-opleiding, krijg je een wettelijk erkend hbo-diploma met de graad Associate degree. Met dit Ad-diploma kun je direct aan de slag in het werkveld of doorstromen naar de bacheloropleiding Communication and Multimedia Design (CMD).
-		-->
 
 
 		<!-- Hint: Dit stukje HTML geeft het misschien al weg :) -->
