@@ -6,7 +6,42 @@
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 		<link href="assets/styles.css" rel="stylesheet">
 		<style>
+
 			/* Schrijf hier gewoon je CSS voor dit component */
+			ul {
+				display: block;
+				list-style-type: none;
+				margin-block-start: 0em;
+				margin-block-end: 0em;
+				margin-inline-start: 0px;
+				margin-inline-end: 0px;
+				padding-inline-start: 0px;
+				unicode-bidi: isolate;
+			}
+			
+			li {
+				background-color: green;
+				background-color: #66E5BF;
+				background-color: var(--green);
+			}
+
+			li:nth-child(3n +1) {
+				background-color: green;
+				background-color: #66E5BF;
+				background-color: var(--green);
+			}
+
+			li:nth-child(3n +2) {
+				background-color: purple;
+				background-color:#A675F5;
+				background-color: var(--purple);
+			}
+
+			li:nth-child(3n +3) {
+				background-color: yellow;
+				background-color:#FFFC86;
+				background-color: var(--yellow);
+			} 
 
 			/* Hint: welk layout model is handig om content naast elkaar te zetten? */
 		</style>
@@ -20,54 +55,62 @@
 		<ul>
 			<li>
 				<blockquote>
-					“Websites leren bouwen, én praktijkervaring opdoen?”
+					“Websites leren bouwen, én 
+					praktijkervaring opdoen?”
 				</blockquote>
 			</li>
 			<li>
 				<blockquote>
-					“FDND is de enige HBO-opleiding voor Frontend Development in Nederland, in twee jaar stomen wij jou klaar voor het werkveld”
+					“FDND is de enige HBO-opleiding voor 
+					Frontend Development in Nederland, in twee 
+					jaar stomen wij jou klaar voor het werkveld”
+				</blockquote>
+			</li>		
+			<li>
+				<blockquote>
+					“Je werkt bij ons aan échte projecten 
+					voor échte opdrachtgevers”
+				</blockquote>
+			</li>						
+			<li>
+				<blockquote>
+					“In het studiomodel werken studenten 
+					onder begeleiding van coaches en experts
+					uit het vakgebied aan praktijkgerichte opdrachten”
 				</blockquote>
 			</li>			
 			<li>
 				<blockquote>
-					“Je werkt bij ons aan échte projecten voor échte opdrachtgevers”
+					“Bij FDND leer je websites 
+					bouwen en andere belangrijke skills 
+					die jij in de praktijk toe kan passen”
 				</blockquote>
 			</li>			
 			<li>
 				<blockquote>
-					“Je werkt bij ons aan échte projecten voor échte opdrachtgevers”
-				</blockquote>
-			</li>			
-			<li>
-				<blockquote>
-					“In het studiomodel werken studenten onder begeleiding van coaches en experts uit het vakgebied aan praktijkgerichte opdrachten”
-				</blockquote>
-			</li>			
-			<li>
-				<blockquote>
-					“Bij FDND leer je websites bouwen en andere belangrijke skills die jij in de praktijk toe kan passen”
-				</blockquote>
-			</li>			
-			<li>
-				<blockquote>
-					“Een Associate degree-opleiding is een tweejarige hbo-opleiding op niveau 5”
+					“Een Associate degree-opleiding is een tweejarige 
+					hbo-opleiding op niveau 5”
 				</blockquote>
 			</li>
 		</ul>
 
 		<!-- Content
+		“Websites leren bouwen, én praktijkervaring opdoen?”
 
+		“FDND is de enige HBO-opleiding voor Frontend Development in Nederland, in twee jaar stomen wij jou klaar voor het werkveld”
 
+		“Je werkt bij ons aan échte projecten voor échte opdrachtgevers”
 
+		“In het studiomodel werken studenten onder begeleiding van coaches en experts uit het vakgebied aan praktijkgerichte opdrachten”
 
+		“Bij FDND leer je websites bouwen en andere belangrijke skills die jij in de praktijk toe kan passen”
 
-
-
+		“Een Associate degree-opleiding is een tweejarige hbo-opleiding op niveau 5”
 		-->
 
-		<details open>
+		<details closed>
 			<summary>Demo video</summary>
-			<video src="assets/carrousel.mp4" width="1298" height="469" controls muted autoplay loop>
+			<video src="assets/carrousel.mp4" width="1298" height="469" controls muted loop>
 				<a href="assets/carrousel.mp4">assets/carrousel.mp4</a>
 			</video>
 		</details>
