@@ -9,7 +9,6 @@
 
 			/* Schrijf hier gewoon je CSS voor dit component */
 			ul {
-				display: block;
 				list-style-type: none;
 				margin-block-start: 0em;
 				margin-block-end: 0em;
@@ -26,8 +25,9 @@
 				overflow: auto;
 				scrollbar-width: none;
 
-				scroll-snap-type: x mandatory; /* Enable snapping horizontally */
+				position: relative;
 
+				scroll-snap-type: x mandatory; /* Enable snapping horizontally */
 			}
 			
 			li {
@@ -75,15 +75,45 @@
 				font-style: italic;
 			}
 
+
+
+			div .button {
+				display: flex;
+				justify-content: space-between;
+				padding: 1em;
+			}
+
+			.button button {
+			justify-content: space-between;
+			display: flex;	
+			padding: .6em;
+			font-size: 1em;	
+
+			color: var(--green);
+			color: green;
+			color: #66E5BF;
+			
+			background-color: darkblue;
+			background-color: #050542;
+			background-color: var(--blue);
+			
+			border-style: none;
+			border-radius: .5em;
+			width: 7em;
+			justify-content: center;
+			}
+
+
 			/* Hint: welk layout model is handig om content naast elkaar te zetten? */
 		</style>
 		<script type="module">
+			
 			/* Schrijf hier eventueel je client-side JavaScript */
 		</script>
 	</head>
 	<body>
 		<h1>Carrousel</h1>
-
+<div>
 		<ul>
 			<li>
 				<blockquote>
@@ -123,12 +153,18 @@
 					“Een Associate degree-opleiding is een tweejarige 
 					hbo-opleiding op niveau 5”
 				</blockquote>
-			</li>
-			<li class="button">
-				<button>vorige</button>
-				<button>volgende</button>
-			</li>
+
+			<!-- <div class="buttons">
+				<li><button>Vorige</button></li>
+				<li><button>volgende</button></li>
+
+			</div> -->
 		</ul>
+	<div class='button'>
+		<button id="prevButton">Vorige</button>
+		<button id="nextButton">Volgende</button>
+	</div>
+</div>
 
 		<!-- Content
 		“Websites leren bouwen, én praktijkervaring opdoen?”
