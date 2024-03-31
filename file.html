@@ -8,6 +8,65 @@
 		<style>
 			/* Schrijf hier gewoon je CSS voor dit component */
 
+			form > :first-child {
+				padding: 10px; /* Adjust the padding value as needed */
+			}
+
+			.inputfile {
+				width: 0.1px;
+				height: 0.1px;
+				opacity: 0;
+				overflow: hidden;
+				position: absolute;
+				z-index: -1;
+			}
+
+			.inputfile, 
+			label {
+				font-size: 1.25em;
+				font-weight: 700;
+				color: darkblue;
+				color: #050542;
+				color: var(--blue);	
+
+				background-color: green;
+				background-color: #66E5BF;
+				background-color: var(--green);
+				display: inline-block;
+				width: 100%;
+				max-width: 60em;
+
+				cursor: pointer;
+				transition: 150ms 100ms ease-in;
+
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				
+			}
+
+			label {
+				height: 30em;
+				margin-block-end: 1em;
+			}
+
+			.inputfile + label:hover,
+			.inputfile:focus + label {
+				background-color: green;
+				background-color: #66E5BF;
+				background-color: var(--green);
+
+				opacity: 80%;
+			}
+
+			.inputfile:focus + label {
+				opacity: 50%;
+			}
+
+
+
+
 			/* Hint: Denk niet te ingewikkeld */
 		</style>
 		<script type="module">
@@ -32,12 +91,12 @@
 			<button type="submit" class="fdnd-button">Uploaden</button>
 
 		</form>
-<!-- 
+
 		<details open>
 			<summary>Demo video</summary>
 			<video src="assets/file.mp4" width="1496" height="496" controls muted loop>
 				<a href="assets/file.mp4">assets/file.mp4</a>
 			</video>
-		</details> -->
+		</details>
 	</body>
 </html>
