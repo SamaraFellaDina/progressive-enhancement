@@ -8,10 +8,6 @@
 		<style>
 			/* Schrijf hier gewoon je CSS voor dit component */
 
-			form > :first-child {
-				padding: 10px; /* Adjust the padding value as needed */
-			}
-
 			.inputfile {
 				width: 0.1px;
 				height: 0.1px;
@@ -23,17 +19,15 @@
 
 			.inputfile, 
 			label {
-				font-size: 1.25em;
-				font-weight: 700;
+				font-weight: 900;
 				color: darkblue;
 				color: #050542;
 				color: var(--blue);	
 
 				background-color: green;
 				background-color: #66E5BF;
-				background-color: var(--green);
-				display: inline-block;
-				width: 100%;
+				background-color: var(--green);				
+
 				max-width: 60em;
 
 				cursor: pointer;
@@ -43,12 +37,18 @@
 				justify-content: center;
 				align-items: center;
 
-				
-			}
-
-			label {
+				border: .1em solid black ;
+				border-radius: .5em;
 				height: 30em;
 				margin-block-end: 1em;
+			}
+
+			label#file-display {
+				background-image: url('${fileURL}');
+				background-size: cover ;
+				background-position: center;
+            	background-repeat: no-repeat;
+
 			}
 
 			.inputfile + label:hover,
@@ -64,14 +64,57 @@
 				opacity: 50%;
 			}
 
-
+			#file {
+				width: 300px;
+				height: 300px;
+				border: 1px solid #ccc;
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				/* '${fileUrl}' */
+			}
 
 
 			/* Hint: Denk niet te ingewikkeld */
 		</style>
 		<script type="module">
 			/* Schrijf hier eventueel je client-side JavaScript */
-			
+
+			const fileInput = document.getElementById('file');
+			const imageDisplay = document.getElementById('file-display');
+			const imageDisplayShow = document.getElementById("file-display-show");
+			const style = "url('')"; 
+
+			// Set initial background image
+			imageDisplay.style.backgroundImage = style;
+
+			fileInput.addEventListener('change', function(event) {
+				const file = event.target.files[0];
+				const reader = new FileReader();
+
+				reader.onload = function(e) {
+					const fileURL = e.target.result;
+					// Update the background image of the imageDisplay element
+					imageDisplay.style.backgroundImage = `url('${fileURL}')`;
+					// Update the src attribute of the imageDisplayShow element
+					imageDisplayShow.src = fileURL;
+					// Update the style variable with the new background image URL
+					// Trigger a custom 'imageUploaded' event
+					const imageUploadedEvent = new Event('imageUploaded');
+					imageDisplay.dispatchEvent(imageUploadedEvent);
+				};
+
+				reader.readAsDataURL(file);
+			});
+
+			// Listen for the custom 'imageUploaded' event
+			imageDisplay.addEventListener('imageUploaded', function(e) {
+				console.log('Image uploaded');
+				// Additional actions you want to perform when an image is uploaded
+				// For example, you can show/hide elements, perform validation, etc.
+			});
+
+
 			/* Hint: Met een paar regels kom je al een heel eind */
 
 			/* Hint: Via JS kun je Custom Properties in CSS aanpassen */
@@ -83,8 +126,8 @@
 		<!-- Voor het uploaden van een bestand heb je altijd een formulier nodig.
 			 Dus die krijg je alvast. Maak je over de server niet druk; het gaat om de UI. -->
 		<form method="post">
-			<input type="file" name="file" id="file" class="inputfile" />
-			<label for="file">Selecteer een afbeelding</label>
+			<input type="file" name="file" id="file" class="inputfile" accept="image/jpeg, image/jpg, image.png"/>
+			<label for="file" id="file-display">Selecteer een afbeelding</label>
 			
 			<!-- Hint: Denk niet te ingewikkeld -->
 
